@@ -397,6 +397,27 @@ section[id] {
   align-items: start;
 }
 .about-photo { max-width: 420px; aspect-ratio: 4 / 5; }
+.avatar-ph {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(120% 80% at 50% 30%, color-mix(in oklab, var(--ac) 10%, var(--sf)), var(--sf));
+}
+.avatar-ph svg {
+  position: absolute;
+  inset: 12% 0 0;
+  width: 100%;
+  height: 88%;
+  fill: color-mix(in oklab, var(--mu) 28%, var(--sf));
+}
+.avatar-ph span {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--mu);
+}
 .about-photo.rv { transition: opacity 0.8s, transform 1s var(--ease); }
 .about-copy {
   display: flex;

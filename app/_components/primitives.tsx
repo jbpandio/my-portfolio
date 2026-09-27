@@ -112,6 +112,19 @@ export function ImageSlot({ src, alt, placeholder, sizes }: { src?: string; alt:
   );
 }
 
+/** Stand-in portrait: a neutral silhouette with initials, used until a real photo exists. */
+export function AvatarPlaceholder({ initials, label }: { initials: string; label: string }) {
+  return (
+    <div className="avatar-ph" role="img" aria-label={label}>
+      <svg viewBox="0 0 200 250" aria-hidden="true" preserveAspectRatio="xMidYMax meet">
+        <circle cx="100" cy="98" r="42" />
+        <path d="M22 250c0-52 35-86 78-86s78 34 78 86z" />
+      </svg>
+      <span>{initials}</span>
+    </div>
+  );
+}
+
 export function ScrollProgress() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {

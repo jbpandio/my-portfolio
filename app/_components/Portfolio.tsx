@@ -6,7 +6,7 @@ import CommandPalette, { type Command } from "./CommandPalette";
 import { EMAIL, GITHUB, LINKEDIN, PROJECTS, RESUME, SECTIONS, STACK, type SectionId } from "./data";
 import Hero from "./Hero";
 import Logo from "./Logo";
-import { Cursor, ImageSlot, Reveal, ScrollProgress, SectionHead } from "./primitives";
+import { AvatarPlaceholder, Cursor, ImageSlot, Reveal, ScrollProgress, SectionHead } from "./primitives";
 import ProjectSheet from "./ProjectSheet";
 
 type Mode = "dark" | "light";
@@ -326,7 +326,7 @@ export default function Portfolio() {
           <SectionHead n="03" cmd="cat about.md" title="About" />
           <div className="about-grid">
             <Reveal className="frame about-photo">
-              <ImageSlot alt="James Benedict Pandio" placeholder="Drop a photo of you" sizes="420px" />
+              <AvatarPlaceholder initials="JB" label="Placeholder portrait of James Benedict Pandio" />
             </Reveal>
             <div className="about-copy">
               <Reveal as="p">
