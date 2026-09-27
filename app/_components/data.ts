@@ -1,7 +1,7 @@
 export const EMAIL = "jamesbenedictpandio@gmail.com";
 export const GITHUB = "https://github.com/jbpandio";
 export const LINKEDIN = "https://www.linkedin.com/in/james-benedict-pandio-642317255/";
-export const RESUME = "/resume.pdf";
+export const RESUME = "resume.pdf";
 
 export type Project = {
   slug: string;
