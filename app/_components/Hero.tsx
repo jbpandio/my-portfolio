@@ -2,7 +2,6 @@
 
 import { useEffect, useState, type MouseEvent } from "react";
 import { PROJECTS } from "./data";
-import { prefersReducedMotion } from "./primitives";
 
 const END = 4400;
 
@@ -10,11 +9,10 @@ const END = 4400;
 function useBootClock() {
   const [t, setT] = useState(0);
   useEffect(() => {
-    const skip = prefersReducedMotion();
     const t0 = performance.now();
     let raf = 0;
     const loop = (now: number) => {
-      const dt = skip ? END : now - t0;
+      const dt = now - t0;
       setT(dt);
       if (dt < END) raf = requestAnimationFrame(loop);
     };

@@ -32,11 +32,7 @@ export default function Portfolio() {
     if (/Mac|iPhone|iPad/.test(navigator.platform || "")) setKbd("⌘K");
     /* eslint-enable react-hooks/set-state-in-effect */
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      lenis.current = new Lenis({ lerp: 0.1, autoRaf: true });
-    } else {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }
+    lenis.current = new Lenis({ lerp: 0.1, autoRaf: true });
 
     const so = new IntersectionObserver(
       (es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id as SectionId)),

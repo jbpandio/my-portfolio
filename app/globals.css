@@ -735,12 +735,3 @@ section[id] {
   transition: width 0.2s, height 0.2s, background 0.2s;
 }
 .cursor.hot { width: 40px; height: 40px; background: transparent; }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-delay: 0ms !important;
-  }
-}

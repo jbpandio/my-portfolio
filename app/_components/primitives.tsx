@@ -3,10 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
-export function prefersReducedMotion() {
-  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 /** Flips to true once the element scrolls into view, then stops observing. */
 export function useInView<T extends Element>() {
   const ref = useRef<T>(null);
@@ -56,7 +52,7 @@ const GLYPHS = "!<>-_/[]{}=+*^?#01abcdef";
 export function Scramble({ text, start }: { text: string; start: boolean }) {
   const [out, setOut] = useState(text);
   useEffect(() => {
-    if (!start || prefersReducedMotion()) return;
+    if (!start) return;
     const t0 = performance.now() + 150;
     let raf = 0;
     const tick = (now: number) => {
